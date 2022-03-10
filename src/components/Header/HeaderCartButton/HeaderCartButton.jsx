@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CartIcon from './CartIcon/CartIcon';
+import CartIcon from '../../Cart/CartIcon/CartIcon';
 
 import classes from './style.module.css';
 
