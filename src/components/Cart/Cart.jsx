@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Modal from '../Modal/Modal';
+
 import classes from './style.module.css';
 
 function Cart() {
@@ -13,7 +15,7 @@ function Cart() {
   ];
 
   return (
-    <div>
+    <Modal>
       {cartItems.map((item) => (
         <ul className={classes['cart-items']}>
           <li>{item.name}</li>
@@ -25,13 +27,13 @@ function Cart() {
         <span>35.62</span>
       </div>
 
-      <div>
+      <div className={classes.actions}>
         <button type="button" className={classes['button--alt']}>
           Close
         </button>
         <button type="button" className={classes.button}>Order</button>
       </div>
-    </div>
+    </Modal>
   );
 }
 
