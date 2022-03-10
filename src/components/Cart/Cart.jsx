@@ -4,7 +4,7 @@ import Modal from '../Modal/Modal';
 
 import classes from './style.module.css';
 
-function Cart() {
+function Cart({ onClose }) {
   const cartItems = [
     {
       id: 'c1',
@@ -15,7 +15,7 @@ function Cart() {
   ];
 
   return (
-    <Modal>
+    <Modal onClose={onClose}>
       {cartItems.map((item) => (
         <ul className={classes['cart-items']}>
           <li>{item.name}</li>
@@ -28,7 +28,7 @@ function Cart() {
       </div>
 
       <div className={classes.actions}>
-        <button type="button" className={classes['button--alt']}>
+        <button type="button" className={classes['button--alt']} onClick={onClose}>
           Close
         </button>
         <button type="button" className={classes.button}>Order</button>

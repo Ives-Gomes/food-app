@@ -6,13 +6,13 @@ import mealsImg from '../../assets/meals.jpg';
 
 import classes from './style.module.css';
 
-function Header() {
+function Header({ onShowCart }) {
   return (
     <>
       <header className={classes.header}>
         <h1>ReactMeals</h1>
 
-        <HeaderCartButton />
+        <HeaderCartButton onClick={onShowCart} />
       </header>
 
       <div className={classes['main-image']}>

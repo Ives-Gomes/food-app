@@ -4,9 +4,9 @@ import CartIcon from '../../Cart/CartIcon/CartIcon';
 
 import classes from './style.module.css';
 
-function HeaderCartButton() {
+function HeaderCartButton({ onClick }) {
   return (
-    <button type="button" className={classes.button}>
+    <button type="button" className={classes.button} onClick={onClick}>
       <span className={classes.icon}>
         <CartIcon />
       </span>
