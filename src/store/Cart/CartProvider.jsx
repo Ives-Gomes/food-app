@@ -58,6 +58,10 @@ const cartReducer = (state, action) => {
     };
   }
 
+  if (action.type === 'CLEAR') {
+    return defaultCartState;
+  }
+
   return defaultCartState;
 };
 
@@ -72,12 +76,17 @@ function CartProvider({ children }) {
     dispatchCartAction({ type: 'REMOVE', id });
   };
 
+  const clearCartHandler = () => {
+    dispatchCartAction({ type: 'CLEAR' });
+  };
+
   // eslint-disable-next-line react/jsx-no-constructed-context-values
   const cartContext = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
     addItem: addItemToCartHandler,
     removeItem: removeItemToCartHandler,
+    clearCart: clearCartHandler,
   };
 
   return (
